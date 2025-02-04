@@ -1,0 +1,17 @@
+{
+	"name": "ds_targetsql_tumbling_window",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_targetsqlnew",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sales_tumbling"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

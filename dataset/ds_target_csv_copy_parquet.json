@@ -1,0 +1,22 @@
+{
+	"name": "ds_target_csv_copy_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatalake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "productparquet",
+				"folderPath": "target",
+				"fileSystem": "firstcontainer"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

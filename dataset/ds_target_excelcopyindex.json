@@ -1,0 +1,33 @@
+{
+	"name": "ds_target_excelcopyindex",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatalake1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"targetname": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().targetname",
+					"type": "Expression"
+				},
+				"folderPath": "target",
+				"fileSystem": "firstcontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

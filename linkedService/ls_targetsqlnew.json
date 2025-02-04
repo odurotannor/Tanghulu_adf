@@ -1,0 +1,12 @@
+{
+	"name": "ls_targetsqlnew",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=tanghulusqlserver.database.windows.net;initial catalog=targetTanghulusql;user id=oduro",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDk4MUU2OTBBLTY5QjYtNEIwQi1CQTlFLTNGMThEOUY0MTFBNF8xNzQyZThmOC0zYjM1LTQxNTgtYjMyMS02NmIxMjRmZGQ1NjYiDQp9"
+		}
+	}
+}

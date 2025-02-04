@@ -1,0 +1,21 @@
+{
+	"name": "Tanghulu-ADF",
+	"properties": {
+		"globalParameters": {
+			"targetcontainer": {
+				"type": "string",
+				"value": "firstcontainer"
+			},
+			"filepath": {
+				"type": "string",
+				"value": "target"
+			}
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f226d7d8-5c1e-458b-9ec2-6ea7e4e0f595",
+		"tenantId": "167af613-4c86-4072-80df-cb589689ab8e"
+	}
+}

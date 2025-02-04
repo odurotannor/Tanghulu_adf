@@ -1,0 +1,30 @@
+{
+	"name": "ds_source_copy_excelsheet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatalake1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sheetname": {
+				"type": "int"
+			}
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "inputExcelfile.xlsx",
+				"folderPath": "source",
+				"fileSystem": "firstcontainer"
+			},
+			"sheetIndex": {
+				"value": "@dataset().sheetname",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

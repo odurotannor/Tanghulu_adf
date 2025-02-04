@@ -1,0 +1,31 @@
+{
+	"name": "ds_target_customfullLoad",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_targetsqlnew",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tableschema": {
+				"type": "string"
+			},
+			"tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().tableschema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

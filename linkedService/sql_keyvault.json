@@ -1,0 +1,11 @@
+{
+	"name": "sql_keyvault",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://Tanghulu-keyvault2.vault.azure.net/"
+		}
+	}
+}
