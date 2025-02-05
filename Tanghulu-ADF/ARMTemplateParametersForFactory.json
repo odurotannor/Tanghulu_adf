@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Tanghulu-ADF"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDatalake1_accountKey": {
+			"value": ""
+		},
+		"ls_source_newsql_connectionString": {
+			"value": ""
+		},
+		"ls_sql_source_connectionString": {
+			"value": ""
+		},
+		"ls_targetsqlnew_connectionString": {
+			"value": ""
+		},
+		"AzureDatalake1_properties_typeProperties_url": {
+			"value": "https://tanghulustoragegen2.dfs.core.windows.net"
+		},
+		"ls_sql_keyvault_version_properties_typeProperties_connectionString_secretName": {
+			"value": "sqlnameee"
+		},
+		"sql_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://Tanghulu-keyvault2.vault.azure.net/"
+		},
+		"tumblingwindowsql_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"tumblingwindowsql_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"tuumbling_window_2_properties_pipeline_parameters_startdate": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"tuumbling_window_2_properties_pipeline_parameters_enddate": {
+			"value": "@trigger().outputs.windowEndTime"
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"targetcontainer": {
+		"type": "string",
+		"value": "firstcontainer"
+	},
+	"filepath": {
+		"type": "string",
+		"value": "target"
+	}
+}
