@@ -12,7 +12,7 @@
 			},
 			"ADLS_prefix": {
 				"type": "string",
-				"value": "abfss://firstcontainer@tanghulustoragegen2.dfs.core.windows.net"
+				"value": "abfs://firstcontainer@tanghulustoragegen2.dfs.core.windows.net"
 			}
 		}
 	},
