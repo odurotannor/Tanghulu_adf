@@ -9,6 +9,10 @@
 			"filepath": {
 				"type": "string",
 				"value": "target"
+			},
+			"ADLS_prefix": {
+				"type": "string",
+				"value": "abfss://firstcontainer@tanghulustoragegen2.dfs.core.windows.net"
 			}
 		}
 	},
