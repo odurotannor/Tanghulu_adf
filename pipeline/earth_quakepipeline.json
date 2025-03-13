@@ -1,0 +1,111 @@
+{
+	"name": "earth_quakepipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "bronze_notebook",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/earthquake_project/bronze_notebook",
+					"baseParameters": {
+						"start_date": {
+							"value": "@formatDateTime(addDays(utcnow(), -1), 'yy-MM-dd')",
+							"type": "Expression"
+						},
+						"end_date": {
+							"value": "@formatDateTime(utcnow(), 'yy-MM-dd')",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "silver_notebook",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "bronze_notebook",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/earthquake_project/silver notebook",
+					"baseParameters": {
+						"bronze_params": {
+							"value": "@string(activity('bronze_notebook').output.runoutput)",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "gold_notebook",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "silver_notebook",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/earthquake_project/Gold_notebook",
+					"baseParameters": {
+						"bronze_params": {
+							"value": "@string(activity('bronze_notebook').output.runOutput)",
+							"type": "Expression"
+						},
+						"silver_params": {
+							"value": "@string(activity('silver_notebook').output.runoutput)",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "earthquake_project"
+		},
+		"annotations": []
+	}
+}

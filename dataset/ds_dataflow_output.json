@@ -1,5 +1,5 @@
 {
-	"name": "source_dataset_copyallfiles",
+	"name": "ds_dataflow_output",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDatalake1",
@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "games",
-				"folderPath": "source",
+				"fileName": "dataflowoutput",
+				"folderPath": "dataflowtarget",
 				"fileSystem": "firstcontainer"
 			},
 			"columnDelimiter": ",",
@@ -20,6 +20,5 @@
 			"quoteChar": "\""
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

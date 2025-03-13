@@ -1,0 +1,25 @@
+{
+	"name": "earthQuake trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "earth_quakepipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 23,
+				"startTime": "2025-03-13T01:22:00",
+				"endTime": "2025-03-14T02:00:00",
+				"timeZone": "Central Standard Time"
+			}
+		}
+	}
+}
