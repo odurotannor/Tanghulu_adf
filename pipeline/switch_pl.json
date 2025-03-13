@@ -66,10 +66,6 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"pipeline": {
-									"referenceName": "copyallfiles pipeline gen2",
-									"type": "PipelineReference"
-								},
 								"waitOnCompletion": true
 							}
 						}
