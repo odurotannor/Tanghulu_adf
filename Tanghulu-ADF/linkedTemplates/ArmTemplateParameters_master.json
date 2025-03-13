@@ -8,6 +8,9 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"AzureDatalake1_accountKey": {
 			"value": ""
 		},
@@ -19,6 +22,9 @@
 		},
 		"ls_targetsqlnew_connectionString": {
 			"value": ""
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0227-041234-apwl9pgr"
 		},
 		"AzureDatalake1_properties_typeProperties_url": {
 			"value": "https://tanghulustoragegen2.dfs.core.windows.net"
