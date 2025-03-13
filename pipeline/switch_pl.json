@@ -66,6 +66,10 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"pipeline": {
+									"referenceName": "copyallfiles pipeline wildcard",
+									"type": "PipelineReference"
+								},
 								"waitOnCompletion": true
 							}
 						}

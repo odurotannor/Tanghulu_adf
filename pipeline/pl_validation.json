@@ -33,6 +33,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_IF_CONDITION",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true
 				}
 			}
