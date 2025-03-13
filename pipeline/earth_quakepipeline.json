@@ -87,7 +87,10 @@
 				"typeProperties": {
 					"notebookPath": "/earthquake_project/Gold_notebook",
 					"baseParameters": {
-						"bronze_params": "@string(activity('bronze_notebook').output.runoutput)",
+						"bronze_params": {
+							"value": "@string(activity('bronze_notebook').output.runOutput)",
+							"type": "Expression"
+						},
 						"silver_params": {
 							"value": "@string(activity('silver_notebook').output.runoutput)",
 							"type": "Expression"
