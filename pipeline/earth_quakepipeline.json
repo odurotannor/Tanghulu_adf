@@ -15,7 +15,17 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/earthquake_project/bronze_notebook"
+					"notebookPath": "/earthquake_project/bronze_notebook",
+					"baseParameters": {
+						"start_date": {
+							"value": "@formatDateTime(addDays(utcnow(), -1), 'yy-MM-dd')",
+							"type": "Expression"
+						},
+						"end_date": {
+							"value": "@formatDateTime(utcnow(), 'yy-MM-dd')",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1",
@@ -42,7 +52,13 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/earthquake_project/silver notebook"
+					"notebookPath": "/earthquake_project/silver notebook",
+					"baseParameters": {
+						"bronze_params": {
+							"value": "@string(activity('bronze_notebook').output.runoutput)",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1",
@@ -69,7 +85,14 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/earthquake_project/Gold_notebook"
+					"notebookPath": "/earthquake_project/Gold_notebook",
+					"baseParameters": {
+						"bronze_params": "@string(activity('bronze_notebook').output.runoutput)",
+						"silver_params": {
+							"value": "@string(activity('silver_notebook').output.runoutput)",
+							"type": "Expression"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks1",
