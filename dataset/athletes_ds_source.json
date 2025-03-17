@@ -1,0 +1,21 @@
+{
+	"name": "athletes_ds_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatalake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
