@@ -1,0 +1,19 @@
+{
+	"name": "Json_git",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatalake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "git.json",
+				"fileSystem": "adventureparameters"
+			}
+		},
+		"schema": {}
+	}
+}
