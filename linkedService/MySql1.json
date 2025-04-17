@@ -1,6 +1,5 @@
 {
 	"name": "MySql1",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "MySql",
@@ -8,15 +7,23 @@
 			"server": "192.168.1.219",
 			"port": 3306,
 			"database": "incremental_load",
-			"username": "root",
+			"username": "tanghulu",
 			"sslMode": 1,
 			"useSystemTrustStore": 0,
-			"driverVersion": "v2",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJjNGUxNzJiNS01NGU3LTQzNzQtOGI1My1jNGM0YzdhNmNmMDEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "password"
+			},
+			"driverVersion": "v2"
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime1",
 			"type": "IntegrationRuntimeReference"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
