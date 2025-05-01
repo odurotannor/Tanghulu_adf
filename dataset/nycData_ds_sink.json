@@ -1,0 +1,20 @@
+{
+	"name": "nycData_ds_sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatalake1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "nyc_taxi2023",
+				"fileSystem": "bronze-nyc"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
